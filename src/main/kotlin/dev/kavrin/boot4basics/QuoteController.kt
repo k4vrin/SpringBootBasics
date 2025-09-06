@@ -1,6 +1,7 @@
 package dev.kavrin.boot4basics
 
 import dev.kavrin.boot4basics.service.QuotesService
+import jakarta.validation.Valid
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -45,14 +46,14 @@ class QuoteController(
 
     @PostMapping
     fun postQuote(
-        @RequestBody quoteDto: QuoteDto
+        @Valid @RequestBody quoteDto: QuoteDto
     ): QuoteDto {
         return quotesService.insertQuote(quoteDto)
     }
 
     @PostMapping("/list")
     fun postListQuotes(
-        @RequestBody quoteDtos: List<QuoteDto>
+        @Valid @RequestBody quoteDtos: List<QuoteDto>
     ): List<QuoteDto> {
         return quotesService.insertQuotes(quoteDtos)
     }
