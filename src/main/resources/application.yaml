@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: Boot4Basics
+quotes:
+  search:
+    ignore-case: true
+    min-length: 3
+  validation:
+    min-length: 5
+    max-length: 500
+    required-author: true
+    allowed-categories:
+      - "motivational"
+      - "funny"
+      - "tech"
+      - "wisdom"
